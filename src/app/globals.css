@@ -587,8 +587,136 @@ a {
   filter: brightness(1.1);
 }
 
+/* Info Button */
+.info-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--ink-secondary);
+  background: transparent;
+  color: var(--ink-secondary);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.info-btn:hover {
+  background-color: var(--ink-secondary);
+  color: var(--paper-bg);
+  transform: scale(1.1);
+}
+
+.info-btn.active {
+  background-color: var(--ink-primary);
+  border-color: var(--ink-primary);
+  color: var(--paper-bg);
+}
+
+/* Info Panel */
+.info-panel {
+  background-color: rgba(62, 51, 48, 0.03);
+  border-bottom: 1px solid rgba(62, 51, 48, 0.15);
+  padding: 1.5rem 2rem;
+  font-family: var(--font-serif);
+  color: var(--ink-primary);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Note Textarea */
+.note-textarea {
+  width: 100%;
+  min-height: 150px;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink-primary);
+  resize: vertical;
+  background-image: linear-gradient(rgba(62, 51, 48, 0.05) 1px, transparent 1px);
+  background-size: 100% 1.8rem;
+  line-height: 1.8rem;
+  padding-top: 5px;
+  /* Adjust to match line height */
+  transition: all 0.2s ease;
+}
+
+.note-textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 2px var(--accent-gold);
+}
+
+.note-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  max-width: 800px;
+}
+
+.note-footer span {
+  font-family: var(--font-hand);
+  color: var(--ink-secondary);
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.info-content-text h3 {
+  font-family: var(--font-hand);
+  font-size: 1.8rem;
+  color: var(--ink-secondary);
+  margin-bottom: 0.8rem;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
+.info-content-text p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  max-width: 800px;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+  .info-panel {
+    padding: 1rem;
+  }
+
+  .info-content-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .info-content-text p {
+    font-size: 0.95rem;
+  }
+
+  .note-textarea {
+    font-size: 1rem;
+    min-height: 120px;
+  }
+
   .container {
     padding: 1.5rem 1rem;
   }
